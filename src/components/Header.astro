@@ -4,5 +4,43 @@ import logoCut from "../assets/KIL_logo_cut.png";
 ---
 
 <header>
-  
+  <nav>
+    <div class="logo">
+      <a href="/">
+        <Image src={logoCut} alt="logo" id="logo" />
+      </a>
+    </div>
+    <ul class="nav-list">
+      <li><a href="/about" class="nav-item">About</a></li>
+      <li><a href="/mexico" class="nav-item">Mexico</a></li>
+      <li><a href="#" class="nav-item">Contact</a></li>
+    </ul>
+  </nav>
 </header>
+
+<style>
+  header {
+    padding: 20px clamp(40px, 16.6%, 280px);
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #logo {
+    max-width: 100px;
+    height: auto;
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 1.1rem;
+  }
+
+  .nav-item {
+    font-size: inherit;
+  }
+</style>

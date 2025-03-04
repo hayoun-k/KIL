@@ -1,4 +1,48 @@
 ---
 import Image from "astro/components/Image.astro";
 import logoCut from "../assets/KIL_logo_cut.png";
+import logo from "../assets/KIL_logo.JPEG";
 ---
+
+<footer>
+  <div class="upper">
+    <div class="logo-container">
+      <Image src={logoCut} alt="logo" width={200} height={200}/>
+    </div>
+    <div class="contact">
+      <a href="mailto:">info@koreanindependencelegacy.org</a>
+    </div>
+  </div>
+  <span class="copyright">Copyright 2025 Korean Independence Legacy. All Rights Reserved</span>
+</footer>
+
+<style>
+
+  footer {
+    padding: 80px clamp(40px, 16.6%, 280px) 40px;
+  }
+
+  .upper {
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+
+
+  .copyright {
+    font-size: 0.7rem;
+    color: rgb(195, 195, 195);
+    text-align: center;
+    display: block;
+  }
+
+  @media screen and ( width < 768px) {
+    .upper {
+      flex-direction: column;
+    }
+  }
+</style>
