@@ -14,6 +14,7 @@ import { Icon } from 'astro-icon/components';
       <form method="GET">
         <input
           type="text"
+          id="search-bar"
           name="search"
           placeholder="Search for a name or details..."
           value=""
@@ -29,6 +30,23 @@ import { Icon } from 'astro-icon/components';
     </section>
   </main>
 </Layout>
+<script>
+  document.getElementById("search-bar").addEventListener("input", function () {
+    let query = this.value.toLowerCase();
+    let items = document.querySelectorAll(".list-item");
+
+    items.forEach(item => {
+      let name = item.querySelector(".name").textContent.toLowerCase();
+      let info = item.querySelector(".text").textContent.toLowerCase();
+
+      if (name.includes(query) || info.includes(query)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+</script>
 
 <style>
   main {
