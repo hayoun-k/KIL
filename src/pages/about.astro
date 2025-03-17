@@ -4,7 +4,30 @@ import Image from "astro/components/Image.astro";
 ---
 <Layout>
   <main>
-    <h1>Lorem Ipsum</h1>
-    <p>We are the descendants of the members of the global network of Korean Independence Activists on parallel journeys to learn about our families. Our ancestors left Korea, loved Korea, and gave all that they could for her freedom. We hope to recover their stories of courage, resistance, resilience, compassion, and devotion to one common goal. </p>
+    <section>
+      <div class="wrapper">
+        <h1>Who We Are</h1>
+        <p>We are the descendants of the members of the global network of Korean Independence Activists on parallel journeys to learn about our families. Our ancestors left Korea, loved Korea, and gave all that they could for her freedom. We hope to recover their stories of courage, resistance, resilience, compassion, and devotion to one common goal. </p>
+      </div>
+    </section>
   </main>
 </Layout>
+
+<style>
+  main {
+    min-height: 450px;
+  }
+
+  section {
+    margin-top: 120px;
+  }
+
+  h1 {
+    margin-bottom: 1em;
+    font-size: 3rem;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+</style>

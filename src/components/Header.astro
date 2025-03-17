@@ -4,23 +4,39 @@ import logoCut from "../assets/KIL_logo_cut.png";
 ---
 
 <header>
-  <nav>
-    <div class="logo">
-      <a href="/">
-        <Image src={logoCut} alt="logo" id="logo" />
-      </a>
-    </div>
-    <ul class="nav-list">
-      <li><a href="/about" class="nav-item">About</a></li>
-      <li><a href="/mexico" class="nav-item">Mexico</a></li>
-      <li><a href="#" class="nav-item">Contact</a></li>
-    </ul>
-  </nav>
+  <div class="wrapper">
+    <nav>
+      <div class="container">
+        <div class="logo">
+          <a href="/">
+            <Image src={logoCut} alt="logo" id="logo" />
+          </a>
+        </div>
+        <div class="mobile-menu">
+          <button id="mobileMenu" class="bar">
+          <svg class="menubar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(32, 32, 32)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 100%; height: 100%;"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg class="close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(32, 32, 32)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 100%; height: 100%;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        </div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="/about" class="nav-item">About</a></li>
+        <li><a href="/mexico" class="nav-item">Mexico</a></li>
+        <li><a href="#" class="nav-item">Contact</a></li>
+        <li><a href="#" class="nav-item cta btn btn-primary">Donate</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script src="../assets/js/menu.js"></script>
 </header>
 
 <style>
-  header {
+  /* header {
     padding: 20px clamp(40px, 16.6%, 280px);
+  } */
+
+  .wrapper {
+    padding-block: 20px;
   }
 
   nav {
@@ -33,6 +49,14 @@ import logoCut from "../assets/KIL_logo_cut.png";
     height: auto;
   }
 
+  /* mobile menu */
+  .mobile-menu {
+  height: 24px;
+  width: 24px;
+  display: none;
+  position: relative;
+}
+
   .nav-list {
     display: flex;
     align-items: center;
@@ -41,6 +65,99 @@ import logoCut from "../assets/KIL_logo_cut.png";
   }
 
   .nav-item {
+    padding: 0.5em 1em;
     font-size: inherit;
+    border-radius: 5px;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .nav-item:hover {
+    color: var(--clr-blue);
+    /* background-color: var(--clr-red); */
+  }
+
+  /* .cta {
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+  } */
+
+  .cta:hover {
+    color: var(--clr-white);
+    background-color: var(--clr-blue);
+  }
+
+  .close {
+    display: none;
+  }
+
+  @media screen and (width < 1024px) {
+    nav {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .container:has(.mobile-menu) {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-menu {
+      display: block;
+    }
+
+    .bar.active {
+      /* top: -10px; */
+      border: none;
+    }
+
+    .bar.active .menubar {
+      display: none;
+    }
+
+    .bar.active .close {
+      display: block;
+    }
+    .navbar {
+      overflow: hidden;
+      /* position: absolute; */
+      top: 100%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-list {
+      width: 100%;
+
+      padding-inline: 3vw;
+      /* height: 0; */
+      overflow: hidden;
+      /* opacity: 0; */
+      /* transition: all ease-in-out 0.5s; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+      /* position: absolute; */
+      top: 100%;
+    }
+
+    /* .nav-list li {
+      width: 100%;
+    } */
+
+    .nav-list.active {
+      padding-top: 20px;
+      /* width: 100%; */
+      /* height: 335px; */
+      /* padding-top: calc(60px); */
+      /* opacity: 1; */
+
+    }
   }
 </style>

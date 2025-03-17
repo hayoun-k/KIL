@@ -5,21 +5,27 @@ import logo from "../assets/KIL_logo.JPEG";
 ---
 
 <footer>
-  <div class="upper">
-    <div class="logo-container">
-      <Image src={logoCut} alt="logo" width={200} height={200}/>
+  <div class="wrapper">
+    <div class="upper">
+      <div class="logo-container">
+        <Image src={logoCut} alt="logo" width={200} height={200}/>
+      </div>
+      <div class="contact">
+        <a href="mailto:">info@koreanindependencelegacy.org</a>
+      </div>
     </div>
-    <div class="contact">
-      <a href="mailto:">info@koreanindependencelegacy.org</a>
-    </div>
+    <span class="copyright">Copyright 2025 Korean Independence Legacy. All Rights Reserved</span>
   </div>
-  <span class="copyright">Copyright 2025 Korean Independence Legacy. All Rights Reserved</span>
 </footer>
 
 <style>
 
-  footer {
+  /* footer {
     padding: 80px clamp(40px, 16.6%, 280px) 40px;
+  } */
+
+  .wrapper {
+    padding-block: 20px;
   }
 
   .upper {

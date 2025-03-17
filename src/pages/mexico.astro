@@ -7,26 +7,30 @@ import { Icon } from 'astro-icon/components';
 <Layout>
   <main>
     <section class="hero">
-      <h1>Immigrants</h1>
-      <p>In 1905, a group of approximately 1000 souls left the Korean Peninsula for the Yucatan Peninsula. The group was a mixture of families, yangban, soldiers, educators, and religious people. Among them were my great-grandparents and their children. Most of these people would never see their homeland again. They would watch from afar as Korea remained occupied from 1910-1945. During this period, a sophisticated global network  launched the Korean National Associations, Mutual Aid Societies, Military Training School, and Korean Language and Cultural School. The US, Mexico and Korea communicated through a newspaper called Sinhan Minbo during the occupation. And although assimilation was forced upon us, we held tight to our hope and Korean identity which remains with the descendants until this day.</p>
+      <div class="wrapper">
+        <h1>Immigrants</h1>
+        <p>In 1905, a group of approximately 1000 souls left the Korean Peninsula for the Yucatan Peninsula. The group was a mixture of families, yangban, soldiers, educators, and religious people. Among them were my great-grandparents and their children. Most of these people would never see their homeland again. They would watch from afar as Korea remained occupied from 1910-1945. During this period, a sophisticated global network  launched the Korean National Associations, Mutual Aid Societies, Military Training School, and Korean Language and Cultural School. The US, Mexico and Korea communicated through a newspaper called Sinhan Minbo during the occupation. And although assimilation was forced upon us, we held tight to our hope and Korean identity which remains with the descendants until this day.</p>
+      </div>
     </section>
     <section class="search">
-      <form method="GET">
-        <input
-          type="text"
-          id="search-bar"
-          name="search"
-          placeholder="Search for a name or details..."
-          value=""
-          class="search-bar"
-        />
-        <button type="submit"><Icon name="mdi:search" /></button>
-      </form>
+        <form method="GET">
+          <input
+            type="text"
+            id="search-bar"
+            name="search"
+            placeholder="Search for a name or details..."
+            value=""
+            class="search-bar"
+          />
+          <button type="submit"><Icon name="mdi:search" /></button>
+        </form>
     </section>
     <section>
-      <ul class="list">
-        <Immigrant />
-      </ul>
+      <div class="wrapper">
+        <ul class="list">
+          <Immigrant />
+        </ul>
+      </div>
     </section>
   </main>
 </Layout>
@@ -50,7 +54,7 @@ import { Icon } from 'astro-icon/components';
 <script src="../assets/js/app.js"></script>
 <style>
   main {
-    background-color: #b6a199;
+    background-color: var(--clr-white);
   }
 
   h1 {
@@ -66,13 +70,13 @@ import { Icon } from 'astro-icon/components';
 
   .search {
     padding-block: 30px;
-    background-color: #b6a199;
+
   }
 
   form {
     width: fit-content;
     padding: 10px 20px;
-    background-color: white;
+    background-color: var(--clr-blue);
     border-radius: 10px;
     display: flex;
     justify-self: center;
@@ -84,12 +88,19 @@ import { Icon } from 'astro-icon/components';
 
   input {
     border: none;
+    color: var(--clr-white);
+    background-color: var(--clr-blue);
     font-size: 1.33rem;
+  }
+
+  input::placeholder {
+    color: var(--clr-white);
   }
 
   button {
     background-color: inherit;
     border: none;
+    color: var(--clr-white);
     font-size: 1.33rem;
     display: flex;
     justify-content: center;

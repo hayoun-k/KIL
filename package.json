@@ -13,6 +13,7 @@
     "@fontsource/source-sans-pro": "^5.2.5",
     "@iconify-json/mdi": "^1.2.3",
     "astro": "^5.4.1",
-    "astro-icon": "^1.1.5"
+    "astro-icon": "^1.1.5",
+    "gsap": "^3.12.7"
   }
 }
