@@ -1,13 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ImageCarousel from '../components/ImageCarousel.astro';
+import NewsCard from '../components/NewsCard.astro';
 
+const imageList=[
+	'https://placehold.co/400x400',
+	'https://placehold.co/400x400',
+	'https://placehold.co/400x400',
+	'https://placehold.co/400x400',
+	'https://placehold.co/400x400',
+	'https://placehold.co/400x400',
+	'https://placehold.co/400x400'
+]
 ---
 
 <Layout>
 	<main>
 		<section class="hero">
 			<div class="wrapper">
-				<h1>One Journey, One Heart</h1>
+				<h1>One <span>Journey</span>, One <span>Heart</span></h1>
 				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, ratione!</p>
 				<a href="/about" class="btn btn-primary">About Us</a>
 			</div>
@@ -19,7 +30,21 @@ import Layout from '../layouts/Layout.astro';
 					<p>Lorem ipsum dolor sit amet.</p>
 				</div>
 			</section>
-
+			<section class="gallery">
+				<div class="wrapper">
+					<h2>Recent Update</h2>
+					<ImageCarousel images={imageList}/>
+				</div>
+			</section>
+			<section class="press">
+				<div class="wrapper">
+					<h2>KIL in Press</h2>
+					<div class="news-container">
+						<NewsCard url="https://n.news.naver.com/article/001/0015306110?sid=102" />
+						<NewsCard url="https://news.bbsi.co.kr/news/articleView.html?idxno=4024378" />
+					</div>
+				</div>
+			</section>
 
 	</main>
 </Layout>
@@ -40,8 +65,22 @@ import Layout from '../layouts/Layout.astro';
 
 	h1 {
 		margin-bottom: 1em;
-		color: var(--clr-blue);
+		color: var(--clr-dark);
 		font-size: 3rem;
+	}
+
+	h1 span {
+		font-size: inherit;
+		font-weight: inherit;
+		font-family: inherit;
+	}
+
+	h1 span:nth-of-type(1) {
+		color: var(--clr-blue);
+	}
+
+	h1 span:nth-of-type(2) {
+		color: var(--clr-red);
 	}
 
 	.hero p {
@@ -63,4 +102,21 @@ import Layout from '../layouts/Layout.astro';
 		font-size: 2rem;
 		text-align: center;
 	}
+
+	.gallery h2 {
+		text-align: center;
+		margin-bottom: 1em;
+	}
+
+	.press h2 {
+		text-align: center;
+		margin-bottom: 1em;
+	}
+
+	.news-container {
+		display: flex;
+		gap: 24px;
+	}
+
+
 </style>

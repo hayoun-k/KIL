@@ -1,0 +1,57 @@
+---
+// Props
+import { fetchMeta } from '../assets/js/fetchMeta';
+
+const { url } = Astro.props;
+const meta = await fetchMeta(url);
+---
+
+{meta && (
+  <a href={meta.url} class="news-card" target="_blank" rel="noopener noreferrer">
+    <img src={meta.image} alt={meta.title} loading="lazy" />
+    <div class="text">
+      <h3>{meta.title}</h3>
+      <p>{meta.description}</p>
+    </div>
+  </a>
+)}
+
+<style>
+  .news-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e2e2;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 400px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s ease;
+  }
+
+  .news-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  .news-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .news-card .text {
+    padding: 1rem;
+  }
+
+  .news-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+  }
+
+  .news-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+</style>
