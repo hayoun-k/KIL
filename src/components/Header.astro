@@ -20,10 +20,22 @@ import logoCut from "../assets/KIL_logo_cut.png";
         </div>
       </div>
       <ul class="nav-list">
-        <li><a href="/about" class="nav-item">About</a></li>
-        <li><a href="/mexico" class="nav-item">Mexico</a></li>
+        <li>
+          <a href="#" class="nav-item">Menu1</a>
+          <ul class="dropdown">
+            <li><a href="#">Submenu 1-1</a></li>
+            <li><a href="#">Submenu 1-2</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="nav-item">Menu2</a>
+          <ul class="dropdown">
+            <li><a href="#">Submenu 2-1</a></li>
+            <li><a href="#">Submenu 2-2</a></li>
+          </ul>
+        </li>
         <li><a href="#" class="nav-item">Contact</a></li>
-        <li><a href="#" class="nav-item cta btn btn-primary">Donate</a></li>
+        <li><a href="#" class="nav-item cta btn btn-primary">CTA</a></li>
       </ul>
     </nav>
   </div>
@@ -62,6 +74,7 @@ import logoCut from "../assets/KIL_logo_cut.png";
     align-items: center;
     gap: 1em;
     font-size: 1.1rem;
+    position: relative;
   }
 
   .nav-item {
@@ -76,6 +89,23 @@ import logoCut from "../assets/KIL_logo_cut.png";
     /* background-color: var(--clr-red); */
   }
 
+  li:has(.dropdown) {
+    position: relative;
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background-color: white;
+  }
+
+  li:has(.dropdown):hover .dropdown {
+    display: block;
+    z-index: 1;
+  }
+
   /* .cta {
     background-color: var(--clr-red);
     color: var(--clr-white);
@@ -83,7 +113,7 @@ import logoCut from "../assets/KIL_logo_cut.png";
 
   .cta:hover {
     color: var(--clr-white);
-    background-color: var(--clr-blue);
+    background-color: var(--clr-dark);
   }
 
   .close {

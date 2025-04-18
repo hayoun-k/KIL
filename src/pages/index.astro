@@ -1,7 +1,9 @@
 ---
+import Image from 'astro/components/Image.astro';
 import Layout from '../layouts/Layout.astro';
 import ImageCarousel from '../components/ImageCarousel.astro';
 import NewsCard from '../components/NewsCard.astro';
+import BannerImage from '../assets/image/image0.jpeg';
 
 const imageList=[
 	'https://placehold.co/400x400',
@@ -17,28 +19,30 @@ const imageList=[
 <Layout>
 	<main>
 		<section class="hero">
+			<Image class="hero-image" src={BannerImage} alt="banner image" />
 			<div class="wrapper">
 				<h1>One <span>Journey</span>, One <span>Heart</span></h1>
 				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, ratione!</p>
 				<a href="/about" class="btn btn-primary">About Us</a>
+
 			</div>
 		</section>
 
 			<section class="upcoming">
 				<div class="wrapper">
-					<h2>Upcoming News</h2>
+					<h2>News</h2>
 					<p>Lorem ipsum dolor sit amet.</p>
 				</div>
 			</section>
 			<section class="gallery">
 				<div class="wrapper">
-					<h2>Recent Update</h2>
+					<h2>Update</h2>
 					<ImageCarousel images={imageList}/>
 				</div>
 			</section>
 			<section class="press">
 				<div class="wrapper">
-					<h2>KIL in Press</h2>
+					<h2>Press</h2>
 					<div class="news-container">
 						<NewsCard url="https://n.news.naver.com/article/001/0015306110?sid=102" />
 						<NewsCard url="https://news.bbsi.co.kr/news/articleView.html?idxno=4024378" />
@@ -50,10 +54,21 @@ const imageList=[
 </Layout>
 <style>
 	.hero {
-		min-height: 600px;
-		background-color: rgb(225, 225, 225);
+		min-height: 800px;
+		background-color: rgba(30,30,30,0.4);
 		display: flex;
 		align-items: center;
+		position: relative;
+	}
+
+	.hero-image {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		object-fit: cover;
+		object-position: 50% 55%;
+		opacity: 0.7;
+		z-index: -1;
 	}
 
 	.hero .wrapper {
@@ -65,8 +80,10 @@ const imageList=[
 
 	h1 {
 		margin-bottom: 1em;
-		color: var(--clr-dark);
+		color: var(--clr-white);
 		font-size: 3rem;
+		/* text-shadow: 1px 1px 2px black; */
+		filter: drop-shadow(1px 1px 2px black);
 	}
 
 	h1 span {
@@ -76,7 +93,8 @@ const imageList=[
 	}
 
 	h1 span:nth-of-type(1) {
-		color: var(--clr-blue);
+		color: var(--clr-red);
+		
 	}
 
 	h1 span:nth-of-type(2) {
@@ -84,6 +102,7 @@ const imageList=[
 	}
 
 	.hero p {
+		color: var(--clr-white);
 		margin-bottom: 1em;
 	}
 
@@ -98,7 +117,7 @@ const imageList=[
 
 	.upcoming h2 {
 		margin-bottom: 1em;
-		color: var(--clr-blue);
+		color: var(--clr-red);
 		font-size: 2rem;
 		text-align: center;
 	}
