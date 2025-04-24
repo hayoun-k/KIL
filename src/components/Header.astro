@@ -20,6 +20,7 @@ import logoCut from "../assets/KIL_logo_cut.png";
         </div>
       </div>
       <ul class="nav-list">
+        <li><a href="/" class="nav-item">Home</a></li>
         <li>
           <a href="#" class="nav-item">Menu1</a>
           <ul class="dropdown">
@@ -34,6 +35,7 @@ import logoCut from "../assets/KIL_logo_cut.png";
             <li><a href="#">Submenu 2-2</a></li>
           </ul>
         </li>
+        <li><a href="#" class="nav-item">About</a></li>
         <li><a href="#" class="nav-item">Contact</a></li>
         <li><a href="#" class="nav-item cta btn btn-primary">CTA</a></li>
       </ul>
@@ -48,7 +50,7 @@ import logoCut from "../assets/KIL_logo_cut.png";
   } */
 
   .wrapper {
-    padding-block: 20px;
+    padding-block: 10px;
   }
 
   nav {
@@ -85,7 +87,7 @@ import logoCut from "../assets/KIL_logo_cut.png";
   }
 
   .nav-item:hover {
-    color: var(--clr-blue);
+    color: var(--clr-red);
     /* background-color: var(--clr-red); */
   }
 
@@ -94,6 +96,7 @@ import logoCut from "../assets/KIL_logo_cut.png";
   }
 
   .dropdown {
+    padding: 1em;
     display: none;
     position: absolute;
     top: 120%;
@@ -104,6 +107,12 @@ import logoCut from "../assets/KIL_logo_cut.png";
   li:has(.dropdown):hover .dropdown {
     display: block;
     z-index: 1;
+  }
+
+  .dropdown a {
+    padding-block: 0.5em;
+    color: rgb(85, 85, 85);
+    display: block;
   }
 
   /* .cta {

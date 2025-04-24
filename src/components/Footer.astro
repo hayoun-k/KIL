@@ -1,7 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
 import logoCut from "../assets/KIL_logo_cut.png";
-import logo from "../assets/KIL_logo.JPEG";
+import { Icon } from "astro-icon/components";
 ---
 
 <footer>
@@ -11,7 +11,15 @@ import logo from "../assets/KIL_logo.JPEG";
         <Image src={logoCut} alt="logo" width={200} height={200}/>
       </div>
       <div class="contact">
+        <h2>Connect with Us</h2>
+        <p>Korean Independence Legacy</p>
+        <a href="#">+1 000-0000</a>
         <a href="mailto:">info@koreanindependencelegacy.org</a>
+        <ul class="social">
+          <li><a href="#"><Icon name="mdi:facebook" /></a></li>
+          <li><a href="#"><Icon name="mdi:instagram" /></a></li>
+          <li><a href="#"><Icon name="mdi:youtube" /></a></li>
+        </ul>
       </div>
     </div>
     <span class="copyright">Copyright 2025 Korean Independence Legacy. All Rights Reserved</span>
@@ -37,7 +45,38 @@ import logo from "../assets/KIL_logo.JPEG";
     gap: 20px;
   }
 
+  .contact {
+    line-height: 1.6;
+  }
 
+  .contact h2 {
+    margin-bottom: 0.5em;
+  }
+
+  .contact p {
+    margin-bottom: 0.3em;
+  }
+
+  .contact a {
+    display: block;
+  }
+
+  .social {
+    padding-block: 0.5em;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .social li a {
+    font-size: 1.5rem;
+    color: var(--clr-red);
+    transition: all ease-in-out 0.2s;
+  }
+
+  .social li a:hover {
+    opacity: 0.6;
+  }
 
   .copyright {
     font-size: 0.7rem;
